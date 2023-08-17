@@ -2,19 +2,19 @@
   <div ref="printContentRef">
     <div>
       <div class="alert alert-success">
-        <h2 class="d-flex justify-content-center my-3">
+        <h3 class="d-flex justify-content-center my-3">
           <i class="bi bi-star"></i> Parabéns, seu pedido foi processado com
           sucesso!
           <i class="bi bi-star"></i>
-        </h2>
+        </h3>
       </div>
 
       <div class="row">
         <div class="col-md-6">
           <!-- Cliente -->
-          <h4 class="mt-4">
+          <h5 class="mt-4">
             <i class="bi bi-calendar"></i> Resumo da sua solicitação
-          </h4>
+          </h5>
           <table class="table table-bordered">
             <tr>
               <td><strong>Data de emissão:</strong></td>
@@ -58,7 +58,9 @@
       <div class="row">
         <div class="col-md-12">
           <!-- Carrinho de Compras -->
-          <h4 class="mt-4"><i class="bi bi-people"></i> Segurados</h4>
+          <h5 class="mt-4">
+            <i class="bi bi-people"></i> Segurados contemplados
+          </h5>
           <table class="table table-bordered">
             <thead>
               <tr>
@@ -100,18 +102,14 @@
         </div>
       </div>
 
-      <div class="row">
-        <div class="col-md-6">
-          <RouterLink to="/emissores" class="btn btn-lg btn-secondary">
-            <i class="bi bi-check"></i> Emitir novo bilhete
+      <div class="d-flex justify-content-between">
+        <div>
+          <RouterLink to="/bilhetes/1" class="btn btn-secondary">
+            <i class="bi bi-gear"></i> Gerenciar bilhetes
           </RouterLink>
         </div>
-        <div class="col-md-6 text-end">
-          <RouterLink
-            @click="printPDF"
-            to="/sucesso"
-            class="btn btn-lg btn-primary"
-          >
+        <div>
+          <RouterLink @click="printPDF" to="/sucesso" class="btn btn-primary">
             <i class="bi bi-printer"></i> Imprimir
           </RouterLink>
         </div>

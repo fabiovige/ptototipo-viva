@@ -36,11 +36,7 @@
     </nav>
   </div>
   <div class="container">
-    <div class="card shadow-sm">
-      <div class="card-body">
-        <router-view />
-      </div>
-    </div>
+    <router-view />
   </div>
 
   <FooterComponent />
