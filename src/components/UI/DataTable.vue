@@ -80,7 +80,7 @@
     </div>
 
     <!-- pagination -->
-    <div class="mt-3 d-flex justify-content-center">
+    <div class="mt-2 d-flex justify-content-center">
       <ul class="pagination pagination-sm mb-0">
         <li class="page-item" :class="{ disabled: currentPage === 1 }">
           <a class="page-link" href="#" @click="firstPage">Primeiro</a>
