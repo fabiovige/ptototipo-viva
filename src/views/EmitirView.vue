@@ -2,7 +2,11 @@
   <div>
     <EmissorComponent />
 
-    <h3>Emitir novo bilhete</h3>
+    <div class="row">
+      <div class="col-md-12">
+        <h3>Emitir novo bilhete</h3>
+      </div>
+    </div>
 
     <form>
       <!-- Vigência -->
@@ -11,7 +15,7 @@
         <div class="card-body">
           <div class="row my-1">
             <div class="col-md-3">
-              <label class="form-label">Início da vigência:</label>
+              <label class="form-label">Dt. Início:</label>
               <input
                 type="date"
                 class="form-control mb-2"
@@ -19,7 +23,7 @@
               />
             </div>
             <div class="col-md-3">
-              <label class="form-label">Fim da vigência:</label>
+              <label class="form-label">Dt. Fim:</label>
               <input
                 type="date"
                 class="form-control mb-2"
@@ -58,15 +62,7 @@
         <div class="card-body">
           <div class="row my-1">
             <h5 class="my-1">Dados Pessoais</h5>
-            <div class="col-md-3">
-              <label for="inputEmail4" class="form-label">Nome completo</label>
-              <input
-                type="email"
-                class="form-control mb-2"
-                id="inputEmail4"
-                v-model="formulario.email"
-              />
-            </div>
+
             <div class="col-md-3">
               <label for="inputEmail4" class="form-label">CPF</label>
               <input
@@ -76,6 +72,17 @@
                 v-model="formulario.cpf"
               />
             </div>
+
+            <div class="col-md-3">
+              <label for="inputEmail4" class="form-label">Nome completo</label>
+              <input
+                type="email"
+                class="form-control mb-2"
+                id="inputEmail4"
+                v-model="formulario.email"
+              />
+            </div>
+
             <div class="col-md-3">
               <label for="inputEmail4" class="form-label"
                 >Data de Nascimento:</label
@@ -210,11 +217,11 @@
     </form>
 
     <div class="row mt-3">
-      <div class="col-md-12 d-flex justify-content-between">
+      <div class="col-md-12 d-flex justify-content-center">
         <button
           @click="adicionarSegurado"
           id="adicionar"
-          class="btn btn-primary justify-content-end"
+          class="btn btn-sm btn-primary justify-content-end"
         >
           <i class="bi bi-plus"></i> Adicionar segurado
         </button>
@@ -228,15 +235,15 @@
       :actions="actions"
     ></data-table>
 
-    <div class="d-flex justify-content-between mt-3">
+    <div class="d-flex justify-content-between my-4">
       <div>
-        <RouterLink to="/bilhetes/1" class="btn btn-secondary">
+        <RouterLink to="/bilhetes/1" class="btn btn-sm btn-secondary">
           <i class="bi bi-arrow-left-circle"></i> Voltar
         </RouterLink>
       </div>
       <div>
-        <RouterLink to="/resumo" class="btn btn-primary">
-          <i class="bi bi-credit-card"></i> Ir para o pagamento
+        <RouterLink to="/resumo" class="btn btn-sm btn-primary">
+          <i class="bi bi-eye"></i> Visualizar informações
         </RouterLink>
       </div>
     </div>
@@ -251,13 +258,13 @@ const planos = ref([]);
 
 const segurados = ref([
   {
-    nome: "Fabio dos Santos Martins",
     cpf: "111.234.567-02",
+    nome: "Fabio dos Santos Martins",
     dataNascimento: "03/02/2001",
   },
   {
-    nome: "Valéria Gonçalvez Nunes",
     cpf: "111.234.567-02",
+    nome: "Valéria Gonçalvez Nunes",
     dataNascimento: "03/02/1999",
   },
 ]);
@@ -317,29 +324,32 @@ import DataTable from "../components/UI/DataTable.vue";
 
 const title = "Segurados contemplados";
 const columns = [
-  { key: "segurado", label: "Segurado", style: { width: "150px" } },
-  { key: "cpf", label: "Cpd", style: { width: "100px" } },
+  { key: "cpf", label: "Cpf", style: { width: "100px" } },
+  { key: "segurado", label: "Nome", style: { width: "150px" } },
   {
     key: "data_nascimento",
-    label: "Data de Nascimento",
+    label: "Dt. Nascimento",
     style: { width: "100px" },
   },
+  { key: "idade", label: "Idade", style: { width: "100px" } },
   { key: "email", label: "E-mail", style: { width: "100px" } },
   { key: "telefone", label: "Telefone", style: { width: "100px" } },
   { key: "actions", label: "Ações", style: { width: "100px" } },
 ];
 const tableData = [
   {
+    cpf: "878.444.444-33",
     segurado: "Andréia da Silva",
-    cpf: "878.444.444.-33",
     data_nascimento: "15/08/1980",
+    idade: "37",
     email: "andreia@gmail.com",
     telefone: "(11) 99999-9999",
   },
   {
+    cpf: "578.444.444-33",
     segurado: "Maria da Silva",
-    cpf: "578.444.444.-33",
     data_nascimento: "15/08/1970",
+    idade: "47",
     email: "maria@gmail.com",
     telefone: "(11) 99999-9995",
   },
@@ -354,7 +364,7 @@ const actions = [
     route: "bilhetes",
   },
   {
-    label: "Excluir",
+    label: "Remover",
     icon: "bi-trash",
     handler: remove,
     class: "btn-danger",

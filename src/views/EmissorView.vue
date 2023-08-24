@@ -25,36 +25,20 @@ const columns = [
   { key: "telefone", label: "Telefone" },
   { key: "actions", label: "Ações" },
 ];
-const tableData = [
-  {
-    id: 1,
-    razao_social: "Empresa XYZ Ltda",
-    nome: "João da Silva",
-    email: "15/08/joao@gmail.com",
-    telefone: "(11) 99999-9999",
-  },
-  {
-    id: 2,
-    razao_social: "Empresa Maria XYZ Ltda",
-    nome: "Maria da Silva",
-    email: "maria@gmail.com",
-    telefone: "(11) 99999-9992",
-  },
-];
 
 const actions = [
   {
-    label: "Gerenciar bilhetes",
-    icon: "bi-gear",
+    label: "Visualizar",
+    icon: "bi-eye",
     handler: manage,
-    class: "btn-secondary",
+    class: "btn-info",
     route: "bilhetes",
   },
   {
-    label: "Visualizar",
-    icon: "bi-eye",
-    handler: view,
-    class: "btn btn-info",
+    label: "Bilhetes",
+    icon: "bi-bookmark-star",
+    handler: manageBilhetes,
+    class: "btn-primary",
     route: "bilhetes",
   },
 ];
@@ -63,9 +47,58 @@ function manage() {
   /* ... */
   console.log("manage");
 }
-function view() {
+function manageBilhetes() {
   /* ... */
+  console.log("manage");
 }
+
+// Generate content
+const generateRandomEmail = (name) => `${name.split(" ").join(".")}@gmail.com`;
+
+const generateRandomData = () => {
+  const names = [
+    "João da Silva",
+    "Maria da Silva",
+    "Pedro da Silva",
+    "Lucas da Silva",
+    "Ana da Silva",
+    "Rafael da Silva",
+    "Bruna da Silva",
+    "Carlos da Silva",
+    "Fernanda da Silva",
+    "Luiza da Silva",
+  ];
+  const razaoSociais = [
+    "Empresa XYZ Ltda",
+    "Empresa ABC Ltda",
+    "Empresa LMN Ltda",
+  ];
+
+  const tableData = [];
+
+  for (let i = 1; i <= 10; i++) {
+    const randomNameIndex = Math.floor(Math.random() * names.length);
+    const randomRazaoSocialIndex = Math.floor(
+      Math.random() * razaoSociais.length
+    );
+    const name = names[randomNameIndex];
+    const razaoSocial = razaoSociais[randomRazaoSocialIndex];
+    const email = generateRandomEmail(name);
+    const telefone = `(11) 99999-${Math.floor(Math.random() * 9000) + 1000}`;
+
+    tableData.push({
+      id: i,
+      razao_social: razaoSocial,
+      nome: name,
+      email: email,
+      telefone: telefone,
+    });
+  }
+
+  return tableData;
+};
+
+const tableData = generateRandomData();
 </script>
 
 <style scoped></style>

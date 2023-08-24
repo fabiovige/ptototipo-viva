@@ -18,7 +18,7 @@
 
 <style scoped>
 .main-content {
-  padding-top: 80px; /* Ajuste este valor para coincidir com a altura da sua navbar */
+  padding-top: 60px; /* Ajuste este valor para coincidir com a altura da sua navbar */
 }
 </style>
 

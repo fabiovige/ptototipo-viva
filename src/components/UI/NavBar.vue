@@ -21,9 +21,7 @@
             >
           </li>
           <li class="nav-item">
-            <RouterLink class="nav-link" to="/emissores"
-              >Emissor novo</RouterLink
-            >
+            <RouterLink class="nav-link" to="/emissores">Emissor</RouterLink>
           </li>
         </ul>
       </div>

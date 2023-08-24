@@ -2,11 +2,186 @@
   <div>
     <EmissorComponent />
 
-    <h3>Confirmação do pedido</h3>
-    <hr />
     <div class="row">
-      <div class="col-md-4">
-        <h5><i class="bi bi-credit-card"></i> Forma de Pagamento</h5>
+      <div class="col-md-12">
+        <!-- Carrinho de Compras -->
+        <h5 class="mt-4">
+          <i class="bi bi-calendar"></i> Informações do bilhete
+        </h5>
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th>Data de emissão</th>
+              <th>Plano</th>
+              <th>Dt. Início</th>
+              <th>Dt. Fim</th>
+              <th>Total Apólices</th>
+              <th>Dias</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>21/08/2023 15:30</td>
+              <td>Brasil PLUS</td>
+              <td>Brasil</td>
+              <td>10/07/2023 00:00</td>
+              <td>11/08/2023 23:59</td>
+              <td>3</td>
+              <td>10</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <!-- Carrinho de Compras -->
+        <h5 class="mt-4">
+          <i class="bi bi-people"></i> Segurados contemplados
+        </h5>
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th>Cpf</th>
+              <th>Nome</th>
+              <th>Idade</th>
+              <th>Preço Unitário</th>
+              <th>Subtotal</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>123.456.678-02</td>
+              <td>Fabio dos Santos Martins</td>
+              <td>52</td>
+              <td>R$ 50,00</td>
+              <td>R$ 100,00</td>
+            </tr>
+            <tr>
+              <td>234.988.977-02</td>
+              <td>Valéria Martins</td>
+              <td>22</td>
+              <td>R$ 30,00</td>
+              <td>R$ 30,00</td>
+            </tr>
+            <tr>
+              <td>234.988.977-02</td>
+              <td>Isabela Nunes Martins</td>
+              <td>37</td>
+              <td>R$ 30,00</td>
+              <td>R$ 30,00</td>
+            </tr>
+            <tr>
+              <td colspan="4" class="text-end"><strong>Total:</strong></td>
+              <td>R$ 160,00</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <h4><i class="bi bi-credit-card"></i> Forma de Pagamento</h4>
+
+    <div class="row">
+      <div class="col-md-6">
+        <!-- faturamento-->
+        <div class="card mb-3">
+          <div class="card-body">
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="flexRadioDefault"
+                id="flexRadioDefault1"
+                checked
+              />
+              <div class="d-flex justify-content-between">
+                <label class="form-check-label" for="flexRadioDefault1">
+                  Faturamento
+                </label>
+
+                <div>
+                  <img src="../assets/faturamento.svg" alt="" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- cartão de crédito -->
+        <div class="card mb-3">
+          <div class="card-body">
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="flexRadioDefault"
+                id="flexRadioDefault1"
+              />
+
+              <div class="d-flex justify-content-between">
+                <label class="form-check-label" for="flexRadioDefault1">
+                  Cartão de Crédito
+                </label>
+
+                <div>
+                  <img src="../assets/card.svg" alt="" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- pix -->
+        <div class="card mb-3">
+          <div class="card-body">
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="flexRadioDefault"
+                id="flexRadioDefault1"
+              />
+
+              <div class="d-flex justify-content-between">
+                <label class="form-check-label" for="flexRadioDefault1">
+                  Pix
+                </label>
+
+                <div>
+                  <img src="../assets/pix.svg" alt="" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- boleto -->
+        <div class="card">
+          <div class="card-body">
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="flexRadioDefault"
+                id="flexRadioDefault1"
+              />
+
+              <div class="d-flex justify-content-between">
+                <label class="form-check-label" for="flexRadioDefault1">
+                  Boleto
+                </label>
+
+                <div>
+                  <img src="../assets/boleto.svg" alt="" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
         <div class="card">
           <div class="card-body">
             <form @submit.prevent="submitForm">
@@ -26,13 +201,16 @@
                 />
               </div>
               <div class="mb-3">
-                <label for="cardName" class="form-label">Nome do Titular</label>
+                <label for="cardName" class="form-label"
+                  >Nome do títular do cartão</label
+                >
                 <input
                   v-model="cardName"
                   type="text"
                   class="form-control mb-2"
                   id="cardName"
                   required
+                  placeholder="João da Silva Mello"
                 />
               </div>
 
@@ -61,102 +239,20 @@
                   required
                 />
               </div>
-
-              <div class="mb-3">
-                <div class="form-check">
-                  <input
-                    class="form-check-input"
-                    type="radio"
-                    value="faturamento"
-                    v-model="paymentMethod"
-                    id="faturamento"
-                  />
-                  <label class="form-check-label" for="faturamento"
-                    >Faturamento</label
-                  >
-                </div>
-              </div>
             </form>
           </div>
         </div>
       </div>
-      <div class="col-md-8">
-        <!-- Outras Informações -->
-        <h5><i class="bi bi-calendar"></i> Plano</h5>
-        <table class="table">
-          <tr>
-            <td><strong>Início da Vigência:</strong></td>
-            <td>01/01/2023</td>
-          </tr>
-          <tr>
-            <td><strong>Fim da Vigência:</strong></td>
-            <td>10/01/2023</td>
-          </tr>
-          <tr>
-            <td><strong>Destino:</strong></td>
-            <td>Brasil</td>
-          </tr>
-          <tr>
-            <td><strong>Plano:</strong></td>
-            <td>Brasil PLUS</td>
-          </tr>
-          <tr>
-            <td><strong>Dias:</strong></td>
-            <td>17</td>
-          </tr>
-        </table>
-
-        <!-- Carrinho de Compras -->
-        <h5><i class="bi bi-people"></i> Segurados contemplados</h5>
-        <table class="table table-bordered table-hover table-striped">
-          <thead>
-            <tr>
-              <th>Nome</th>
-              <th>Cpf</th>
-              <th>Idade</th>
-              <th>Preço Unitário</th>
-              <th>Subtotal</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Fabio dos Santos Martins</td>
-              <td>123.456.678-02</td>
-              <td>52</td>
-              <td>R$ 50,00</td>
-              <td>R$ 100,00</td>
-            </tr>
-            <tr>
-              <td>Valéria Martins</td>
-              <td>234.988.977-02</td>
-              <td>22</td>
-              <td>R$ 30,00</td>
-              <td>R$ 30,00</td>
-            </tr>
-            <tr>
-              <td>Isabela Nunes Martins</td>
-              <td>234.988.977-02</td>
-              <td>37</td>
-              <td>R$ 30,00</td>
-              <td>R$ 30,00</td>
-            </tr>
-            <tr>
-              <td colspan="4" class="text-end"><strong>Total:</strong></td>
-              <td>R$ 160,00</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
     </div>
 
-    <div class="d-flex justify-content-between">
+    <div class="mt-3 d-flex justify-content-between">
       <div>
-        <RouterLink to="/emitir" class="btn btn-secondary">
+        <RouterLink to="/emitir" class="btn btn-sm btn-secondary">
           <i class="bi bi-arrow-left-circle"></i> Voltar
         </RouterLink>
       </div>
       <div>
-        <RouterLink to="/sucesso" class="btn btn-primary">
+        <RouterLink to="/sucesso" class="btn btn-sm btn-primary">
           <i class="bi bi-credit-card"></i> Confirmar pagamento
         </RouterLink>
       </div>

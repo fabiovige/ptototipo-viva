@@ -14,25 +14,6 @@
       />
     </div>
 
-    <div class="d-flex justify-content-between align-items-center">
-      <div class="mb-2 text-muted">
-        Total de registros: <strong>{{ allData.length }}</strong>
-      </div>
-      <div class="mb-2">
-        <select
-          v-model="pageSize"
-          class="form-select form-select-sm"
-          id="pageSize"
-        >
-          <option value="5">5</option>
-          <option value="10">10</option>
-          <option value="25">25</option>
-          <option value="50">50</option>
-          <option value="100">100</option>
-        </select>
-      </div>
-    </div>
-
     <!-- table  -->
     <div class="table-responsive">
       <table class="table table-bordered table-striped table-hover">
@@ -59,19 +40,49 @@
                 column.key === 'actions' ? { width: '60px' } : column.style
               "
             >
-              {{ row[column.key] }}
+              <!-- Verifique se a coluna é 'status', e em caso afirmativo, use v-html -->
+              <template v-if="column.key === 'status'">
+                <span
+                  v-if="row[column.key] === 'Confirmado'"
+                  class="badge text-bg-success"
+                  ><i class="bi bi-check"></i> Confirmado</span
+                >
+                <span v-else class="badge text-bg-warning"
+                  ><i class="bi bi-exclamation-triangle"></i> Pendente</span
+                >
+              </template>
+
+              <!-- Se não for 'status', renderize normalmente -->
+              <template v-else-if="column.key !== 'actions'">
+                {{ row[column.key] }}
+              </template>
 
               <template v-if="column.key === 'actions'">
-                <router-link
-                  v-for="action in props.actions"
-                  :key="action.label"
-                  :to="`/${action.route}/${row.id}`"
-                  :class="`btn ${action.class} btn-sm ms-2 `"
-                  :title="action.label"
-                  data-bs-toggle="tooltip"
-                >
-                  <i :class="action.icon"></i> {{ action.label }}
-                </router-link>
+                <template v-for="action in props.actions" :key="action.label">
+                  <router-link
+                    v-if="action.key === 'visualizar'"
+                    :to="
+                      row.status === 'Confirmado'
+                        ? `/visualizar/${row.id}`
+                        : `/visualizar/pendente/${row.id}`
+                    "
+                    :class="`btn btn-sm ${action.class}  ms-2 `"
+                    :title="action.label"
+                    data-bs-toggle="tooltip"
+                  >
+                    <i :class="action.icon"></i> {{ action.label }}
+                  </router-link>
+
+                  <router-link
+                    v-else
+                    :to="`/${action.route}/${row.id}`"
+                    :class="`btn btn-sm ${action.class}  ms-2 `"
+                    :title="action.label"
+                    data-bs-toggle="tooltip"
+                  >
+                    <i :class="action.icon"></i> {{ action.label }}
+                  </router-link>
+                </template>
               </template>
             </td>
           </tr>
@@ -79,36 +90,63 @@
       </table>
     </div>
 
-    <!-- pagination -->
-    <div class="mt-2 d-flex justify-content-center">
-      <ul class="pagination pagination-sm mb-0">
-        <li class="page-item" :class="{ disabled: currentPage === 1 }">
-          <a class="page-link" href="#" @click="firstPage">Primeiro</a>
-        </li>
-        <li class="page-item" :class="{ disabled: currentPage === 1 }">
-          <a class="page-link" href="#" @click="prevPage">Anterior</a>
-        </li>
-        <li
-          class="page-item"
-          v-for="page in totalPages"
-          :key="page"
-          :class="{ active: currentPage === page }"
+    <div
+      class="mt-3 mt-md-3 mt-lg-0 d-flex justify-content-between align-items-center"
+    >
+      <!-- Total register and  pages -->
+      <div class="">
+        <select
+          v-model="pageSize"
+          class="form-select form-select-sm"
+          id="pageSize"
         >
-          <a class="page-link" href="#" @click="updatePage(page)">{{ page }}</a>
-        </li>
-        <li class="page-item" :class="{ disabled: currentPage === totalPages }">
-          <a class="page-link" href="#" @click="nextPage">Próximo</a>
-        </li>
-        <li class="page-item" :class="{ disabled: currentPage === totalPages }">
-          <a class="page-link" href="#" @click="lastPage">Último</a>
-        </li>
-      </ul>
+          <option value="5">5</option>
+          <option value="10">10</option>
+          <option value="25">25</option>
+          <option value="50">50</option>
+          <option value="100">100</option>
+        </select>
+      </div>
+
+      <!-- pagination -->
+      <div class="d-flex justify-content-center">
+        <ul class="pagination pagination-sm mb-0">
+          <li class="page-item" :class="{ disabled: currentPage === 1 }">
+            <a class="page-link" href="#" @click="firstPage">Primeiro</a>
+          </li>
+          <li class="page-item" :class="{ disabled: currentPage === 1 }">
+            <a class="page-link" href="#" @click="prevPage">Anterior</a>
+          </li>
+          <li
+            class="page-item"
+            v-for="page in totalPages"
+            :key="page"
+            :class="{ active: currentPage === page }"
+          >
+            <a class="page-link" href="#" @click="updatePage(page)">{{
+              page
+            }}</a>
+          </li>
+          <li
+            class="page-item"
+            :class="{ disabled: currentPage === totalPages }"
+          >
+            <a class="page-link" href="#" @click="nextPage">Próximo</a>
+          </li>
+          <li
+            class="page-item"
+            :class="{ disabled: currentPage === totalPages }"
+          >
+            <a class="page-link" href="#" @click="lastPage">Último</a>
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 </template>
 
 <script setup>
-import { ref, computed, defineProps } from "vue";
+import { ref, computed, defineProps, watch } from "vue";
 
 const props = defineProps({
   title: String,
@@ -120,6 +158,10 @@ const props = defineProps({
 const pageSize = ref(5);
 const filter = ref("");
 const currentPage = ref(1);
+
+watch(pageSize, () => {
+  currentPage.value = 1; // Defina o currentPage para 1 sempre que o pageSize for alterado
+});
 
 // Filtrando os dados com base no filtro
 const allData = computed(() => {
