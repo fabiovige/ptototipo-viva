@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-md-12">
       <!-- Carrinho de Compras -->
-      <h5 class="mt-4"><i class="bi bi-cash"></i> Informações de pagamento</h5>
+      <h4 class="mt-4"><i class="bi bi-cash"></i> Informações de pagamento</h4>
       <table class="table table-bordered">
         <thead>
           <tr>

@@ -1,15 +1,9 @@
 <template>
   <div>
-    <EmissorComponent />
     <div class="row">
-      <div class="col-12 d-flex justify-content-between">
+      <div class="col-12 d-flex justify-content-end">
         <div>
-          <RouterLink to="/emissores" class="btn btn-sm btn-secondary mt-3">
-            <i class="bi bi-arrow-left-circle"></i> Voltar
-          </RouterLink>
-        </div>
-        <div>
-          <RouterLink to="/emitir" class="btn btn-sm btn-dark mt-3 ms-2">
+          <RouterLink to="/emitir" class="btn btn-success">
             <i class="bi bi-plus"></i> Emitir novo bilhete
           </RouterLink>
         </div>
@@ -22,13 +16,22 @@
       :data="mappedTableData"
       :actions="actions"
     ></data-table>
+
+    <div class="row mt-3">
+      <div class="col-12 d-flex justify-content-between">
+        <div>
+          <RouterLink to="/emissores" class="btn btn-info">
+            <i class="bi bi-arrow-left-circle"></i> Voltar
+          </RouterLink>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
 <script setup>
-import { ref, computed } from "vue";
+import { computed, ref } from "vue";
 import { RouterLink, useRouter } from "vue-router";
-import EmissorComponent from "../components/EmissorComponent.vue";
 import DataTable from "../components/UI/DataTable.vue";
 const router = useRouter(); // Inicialize o roteador aqui
 const title = "Bilhetes emitidos";

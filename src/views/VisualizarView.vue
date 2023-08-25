@@ -5,6 +5,9 @@
         <div>
           <h4>Bilhete ID: #98765</h4>
         </div>
+        <button class="btn btn-danger">
+          <i class="bi bi-dash-circle"></i> Cancelar Bilhete
+        </button>
       </div>
     </div>
 
@@ -17,14 +20,10 @@
     <div class="row">
       <div class="col-md-12 d-flex justify-content-between">
         <div>
-          <RouterLink to="/bilhetes/1" class="btn btn-sm btn-secondary">
+          <RouterLink to="/bilhetes/1" class="btn btn-info">
             <i class="bi bi-arrow-left-circle"></i> Voltar
           </RouterLink>
         </div>
-
-        <button class="btn btn-sm btn-danger">
-          <i class="bi bi-x-circle"></i> Cancelar bilhete
-        </button>
       </div>
     </div>
   </div>

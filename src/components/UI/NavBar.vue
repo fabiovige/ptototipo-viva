@@ -1,7 +1,10 @@
 <template>
-  <nav class="navbar navbar-expand-lg bg-body-tertiary shadow-sm fixed-top">
+  <nav class="navbar navbar-expand-lg bg-info-subtle shadow-sm fixed-top">
     <div class="container">
-      <a class="navbar-brand" href="#">Sistema Seguro Viagem - Protótipo</a>
+      <span class="navbar-brand mb-1 h1">
+        <img src="../../assets/logo.png" />
+      </span>
+
       <button
         class="navbar-toggler"
         type="button"
@@ -14,14 +17,26 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
+        <ul class="navbar-nav ms-auto">
           <li class="nav-item">
-            <RouterLink class="nav-link active" aria-current="page" to="/"
-              >Home</RouterLink
+            <RouterLink class="nav-link active" aria-current="page" to="/">
+              <i class="bi bi-house"></i> Home
+            </RouterLink>
+          </li>
+          <li class="nav-item">
+            <RouterLink class="nav-link" to="/emissores">
+              <i class="bi bi-bookmark-star"></i> Emitir Bilhete
+            </RouterLink>
+          </li>
+          <li class="nav-item">
+            <RouterLink class="nav-link" to="/emissores">
+              <i class="bi bi-clipboard-check"></i> Financeiro</RouterLink
             >
           </li>
           <li class="nav-item">
-            <RouterLink class="nav-link" to="/emissores">Emissor</RouterLink>
+            <RouterLink class="nav-link" to="/emissores">
+              <i class="bi bi-box-arrow-right"></i> Sair
+            </RouterLink>
           </li>
         </ul>
       </div>
@@ -30,3 +45,8 @@
 </template>
 
 <script setup></script>
+<style scoped>
+.bg-custom {
+  background-color: #5c1b8d;
+}
+</style>

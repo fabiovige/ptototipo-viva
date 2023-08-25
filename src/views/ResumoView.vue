@@ -1,13 +1,11 @@
 <template>
   <div>
-    <EmissorComponent />
-
     <div class="row">
       <div class="col-md-12">
         <!-- Carrinho de Compras -->
-        <h5 class="mt-4">
+        <h4 class="mt-4">
           <i class="bi bi-calendar"></i> Informações do bilhete
-        </h5>
+        </h4>
         <table class="table table-bordered">
           <thead>
             <tr>
@@ -26,7 +24,6 @@
               <td>Brasil</td>
               <td>10/07/2023 00:00</td>
               <td>11/08/2023 23:59</td>
-              <td>3</td>
               <td>10</td>
             </tr>
           </tbody>
@@ -37,9 +34,9 @@
     <div class="row">
       <div class="col-md-12">
         <!-- Carrinho de Compras -->
-        <h5 class="mt-4">
+        <h4 class="mt-4">
           <i class="bi bi-people"></i> Segurados contemplados
-        </h5>
+        </h4>
         <table class="table table-bordered">
           <thead>
             <tr>
@@ -247,13 +244,13 @@
 
     <div class="mt-3 d-flex justify-content-between">
       <div>
-        <RouterLink to="/emitir" class="btn btn-sm btn-secondary">
-          <i class="bi bi-arrow-left-circle"></i> Voltar
+        <RouterLink to="/emitir" class="btn btn-info">
+          <i class="bi bi-arrow-left-circle"></i> Corrigir informações
         </RouterLink>
       </div>
       <div>
-        <RouterLink to="/sucesso" class="btn btn-sm btn-primary">
-          <i class="bi bi-credit-card"></i> Confirmar pagamento
+        <RouterLink to="/sucesso" class="btn btn-success">
+          <i class="bi bi-check-circle"></i> Confirmar pagamento
         </RouterLink>
       </div>
     </div>
@@ -261,9 +258,8 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
 import creditCardType from "credit-card-type";
-import EmissorComponent from "../components/EmissorComponent.vue";
+import { ref } from "vue";
 
 const cardNumber = ref("");
 const cardIcon = ref("");

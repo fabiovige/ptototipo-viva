@@ -14,9 +14,9 @@
       <InformacoesSeguradoSucesso />
     </div>
 
-    <div class="d-flex justify-content-center">
-      <RouterLink to="/bilhetes/1" class="btn btn-sm btn-secondary">
-        <i class="bi bi-arrow-left-circle"></i> Voltar ao Início
+    <div class="d-flex">
+      <RouterLink to="/bilhetes/1" class="btn btn-info">
+        <i class="bi bi-house"></i> Voltar ao Início
       </RouterLink>
     </div>
   </div>

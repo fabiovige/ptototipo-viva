@@ -1,8 +1,6 @@
 <template>
   <div>
-    <EmissorComponent />
-
-    <div class="row">
+    <div class="row my-3">
       <div class="col-md-12">
         <h3>Emitir novo bilhete</h3>
       </div>
@@ -221,9 +219,9 @@
         <button
           @click="adicionarSegurado"
           id="adicionar"
-          class="btn btn-sm btn-primary justify-content-end"
+          class="btn btn-success"
         >
-          <i class="bi bi-plus"></i> Adicionar segurado
+          <i class="bi bi-check-circle"></i> Salvar
         </button>
       </div>
     </div>
@@ -237,13 +235,13 @@
 
     <div class="d-flex justify-content-between my-4">
       <div>
-        <RouterLink to="/bilhetes/1" class="btn btn-sm btn-secondary">
-          <i class="bi bi-arrow-left-circle"></i> Voltar
+        <RouterLink to="/bilhetes/1" class="btn btn-info">
+          <i class="bi bi-x-circle"></i> Cancelar emissão
         </RouterLink>
       </div>
       <div>
-        <RouterLink to="/resumo" class="btn btn-sm btn-primary">
-          <i class="bi bi-eye"></i> Visualizar informações
+        <RouterLink to="/resumo" class="btn btn-success">
+          <i class="bi bi-check-circle"></i> Visualizar informações
         </RouterLink>
       </div>
     </div>
@@ -252,7 +250,6 @@
 
 <script setup>
 import { ref } from "vue";
-import EmissorComponent from "../components/EmissorComponent.vue";
 const destino = ref("");
 const planos = ref([]);
 
