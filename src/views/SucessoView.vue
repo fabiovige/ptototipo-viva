@@ -7,14 +7,6 @@
         </div>
       </div>
 
-      <div class="row">
-        <div class="col-12 d-flex align-content-center justify-content-between">
-          <div>
-            <h4>Bilhete ID: #98765</h4>
-          </div>
-        </div>
-      </div>
-
       <InformacoesBilhete />
 
       <InformacoesPagamentoSucesso />

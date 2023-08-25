@@ -6,6 +6,7 @@
       <table class="table table-bordered">
         <thead>
           <tr>
+            <th>Id Bilhete</th>
             <th>Cpf</th>
             <th>Nome</th>
             <th>E-mail</th>
@@ -15,6 +16,7 @@
         </thead>
         <tbody>
           <tr>
+            <td>989765</td>
             <td>123.456.678-02</td>
             <td>Fabio dos Santos Martins</td>
             <td>fabiovige@gmail.com</td>
@@ -26,6 +28,7 @@
             </td>
           </tr>
           <tr>
+            <td>989765</td>
             <td>123.456.678-02</td>
             <td>Fabio dos Santos Martins</td>
             <td>fabiovige@gmail.com</td>
@@ -37,6 +40,7 @@
             </td>
           </tr>
           <tr>
+            <td>989765</td>
             <td>123.456.678-02</td>
             <td>Fabio dos Santos Martins</td>
             <td>fabiovige@gmail.com</td>
