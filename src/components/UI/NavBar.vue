@@ -1,6 +1,6 @@
 <template>
   <nav class="navbar navbar-expand-lg bg-info-subtle shadow-sm fixed-top">
-    <div class="container">
+    <div class="container-fluid">
       <span class="navbar-brand mb-1 h1">
         <img src="../../assets/logo.png" />
       </span>
@@ -33,6 +33,9 @@
               <i class="bi bi-clipboard-check"></i> Financeiro</RouterLink
             >
           </li>
+        </ul>
+
+        <ul class="navbar-nav ms-auto">
           <li class="nav-item">
             <RouterLink class="nav-link" to="/emissores">
               <i class="bi bi-box-arrow-right"></i> Sair

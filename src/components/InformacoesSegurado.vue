@@ -3,7 +3,9 @@
     <div class="col-md-12">
       <!-- Carrinho de Compras -->
       <h4 class="mt-4"><i class="bi bi-person"></i> Informações do segurado</h4>
-      <table class="table table-bordered">
+
+      <div class="table-responsive">
+      <table class="table table-bordered table-striped ">
         <thead>
           <tr>
             <th>Cpf</th>
@@ -27,6 +29,7 @@
           </tr>
         </tbody>
       </table>
+      </div>
     </div>
   </div>
 </template>

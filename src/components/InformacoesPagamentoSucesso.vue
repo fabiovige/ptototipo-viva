@@ -3,7 +3,7 @@
     <div class="col-md-12">
       <!-- Carrinho de Compras -->
       <h4 class="mt-4"><i class="bi bi-cash"></i> Informações de pagamento</h4>
-      <table class="table table-bordered">
+      <table class="table table-bordered table-striped">
         <thead>
           <tr>
             <th>Status Pagto</th>

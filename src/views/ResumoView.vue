@@ -1,12 +1,20 @@
 <template>
   <div>
     <div class="row">
+      <div
+        class="col-12 d-flex justify-content-md-end justify-content-start mb-3 mb-md-0"
+      >
+        <RouterLink to="/emitir" class="btn btn-info">
+          <i class="bi bi-arrow-left-circle"></i> Corrigir informações
+        </RouterLink>
+      </div>
+    </div>
+
+    <div class="row">
       <div class="col-md-12">
         <!-- Carrinho de Compras -->
-        <h4 class="mt-4">
-          <i class="bi bi-calendar"></i> Informações do bilhete
-        </h4>
-        <table class="table table-bordered">
+        <h4><i class="bi bi-calendar"></i> Informações do plano</h4>
+        <table class="table table-bordered table-striped">
           <thead>
             <tr>
               <th>Data de emissão</th>
@@ -35,9 +43,9 @@
       <div class="col-md-12">
         <!-- Carrinho de Compras -->
         <h4 class="mt-4">
-          <i class="bi bi-people"></i> Segurados contemplados
+          <i class="bi bi-people"></i> Bilhetes
         </h4>
-        <table class="table table-bordered">
+        <table class="table table-bordered table-striped">
           <thead>
             <tr>
               <th>Cpf</th>
@@ -78,7 +86,7 @@
       </div>
     </div>
 
-    <h4><i class="bi bi-credit-card"></i> Forma de Pagamento</h4>
+    <h4><i class="bi bi-credit-card"></i> Forma de pagamento</h4>
 
     <div class="row">
       <div class="col-md-6">
@@ -179,7 +187,7 @@
         </div>
       </div>
       <div class="col-md-6">
-        <div class="card">
+        <div class="card mt-3 mt-md-0">
           <div class="card-body">
             <form @submit.prevent="submitForm">
               <div class="mb-3">
@@ -242,12 +250,7 @@
       </div>
     </div>
 
-    <div class="mt-3 d-flex justify-content-between">
-      <div>
-        <RouterLink to="/emitir" class="btn btn-info">
-          <i class="bi bi-arrow-left-circle"></i> Corrigir informações
-        </RouterLink>
-      </div>
+    <div class="mt-3 d-flex justify-content-end">
       <div>
         <RouterLink to="/sucesso" class="btn btn-success">
           <i class="bi bi-check-circle"></i> Confirmar pagamento

@@ -1,14 +1,18 @@
 <template>
   <div>
-    <div class="row my-3">
-      <div class="col-md-12">
-        <h3>Emitir novo bilhete</h3>
+    <div class="row">
+      <div
+        class="col-12 d-flex justify-content-md-end justify-content-start mb-3 mb-md-0"
+      >
+        <RouterLink to="/bilhetes/1" class="btn btn-info">
+          <i class="bi bi-x-circle"></i> Cancelar emissão
+        </RouterLink>
       </div>
     </div>
 
     <form>
       <!-- Vigência -->
-      <h5>Informações do plano e vigência</h5>
+      <h4><i class="bi bi-calendar"></i> Informações do plano</h4>
       <div class="card">
         <div class="card-body">
           <div class="row my-1">
@@ -55,7 +59,7 @@
       </div>
 
       <!-- Dados do Cliente -->
-      <h5 class="mt-3">Informações do segurado</h5>
+      <h4 class="mt-3"><i class="bi bi-person"></i> Informações do segurado</h4>
       <div class="card">
         <div class="card-body">
           <div class="row my-1">
@@ -233,12 +237,7 @@
       :actions="actions"
     ></data-table>
 
-    <div class="d-flex justify-content-between my-4">
-      <div>
-        <RouterLink to="/bilhetes/1" class="btn btn-info">
-          <i class="bi bi-x-circle"></i> Cancelar emissão
-        </RouterLink>
-      </div>
+    <div class="d-flex justify-content-end mt-3">
       <div>
         <RouterLink to="/resumo" class="btn btn-success">
           <i class="bi bi-check-circle"></i> Visualizar informações
@@ -319,7 +318,7 @@ const formulario = ref({
 
 import DataTable from "../components/UI/DataTable.vue";
 
-const title = "Segurados contemplados";
+const title = "Bilhetes";
 const columns = [
   { key: "cpf", label: "Cpf", style: { width: "100px" } },
   { key: "segurado", label: "Nome", style: { width: "150px" } },

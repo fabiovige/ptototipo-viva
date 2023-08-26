@@ -2,8 +2,8 @@
   <div class="row">
     <div class="col-md-12">
       <!-- Carrinho de Compras -->
-      <h4 class="mt-4"><i class="bi bi-person"></i> Informações do segurado</h4>
-      <table class="table table-bordered">
+      <h4 class="mt-4"><i class="bi bi-people"></i> Bilhetes</h4>
+      <table class="table table-bordered table-striped">
         <thead>
           <tr>
             <th>Id Bilhete</th>

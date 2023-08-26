@@ -1,7 +1,7 @@
 <template>
-  <span class="h4">{{ title }}</span>
+  <span class="h4"> <i class="bi bi-card-list"></i> {{ title }}</span>
 
-  <div class="card mt-3">
+  <div class="card mt-3 shadow-sm">
     <div class="card-body">
       <!-- filter -->
       <div class="input-group mb-3">
@@ -89,29 +89,25 @@
             </tr>
           </tbody>
         </table>
-      </div>
-
-      <div
-        class="mt-3 mt-md-3 mt-lg-3 mt-xl-0 d-flex justify-content-between align-items-center"
-      >
-        <!-- Total register and  pages -->
-        <div class="">
-          <select
-            v-model="pageSize"
-            class="form-select form-select-sm"
-            id="pageSize"
-          >
-            <option value="5">5</option>
-            <option value="10">10</option>
-            <option value="25">25</option>
-            <option value="50">50</option>
-            <option value="100">100</option>
-          </select>
-        </div>
-
         <!-- pagination -->
         <div class="d-flex justify-content-center">
-          <ul class="pagination pagination-sm mb-0">
+          <!-- Total register and  pages -->
+
+          <!-- pagination -->
+          <ul class="pagination pagination-sm">
+            <li class="me-3">
+              <select
+                v-model="pageSize"
+                class="form-select form-select-sm"
+                id="pageSize"
+              >
+                <option value="5">5</option>
+                <option value="10">10</option>
+                <option value="25">25</option>
+                <option value="50">50</option>
+                <option value="100">100</option>
+              </select>
+            </li>
             <li class="page-item" :class="{ disabled: currentPage === 1 }">
               <a class="page-link" href="#" @click="firstPage">Primeiro</a>
             </li>

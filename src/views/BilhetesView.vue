@@ -1,12 +1,12 @@
 <template>
   <div>
     <div class="row">
-      <div class="col-12 d-flex justify-content-end">
-        <div>
-          <RouterLink to="/emitir" class="btn btn-success">
-            <i class="bi bi-plus"></i> Emitir novo bilhete
-          </RouterLink>
-        </div>
+      <div
+        class="col-12 d-flex justify-content-md-end justify-content-start mb-3 mb-md-0"
+      >
+        <RouterLink to="/emitir" class="btn btn-success">
+          <i class="bi bi-plus"></i> Emitir novo bilhete
+        </RouterLink>
       </div>
     </div>
 

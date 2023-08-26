@@ -1,21 +1,28 @@
 <template>
   <div>
-    <div class="row mt-3">
-      <div class="col-12 d-flex align-content-center justify-content-between">
+    <div class="row">
+      <div class="col-12 d-flex justify-content-between">
         <div>
           <h4>Bilhete ID: #98765</h4>
+          <span class="small text-muted">Emitido: 15/08/2023 13:45</span>
         </div>
-        <button class="btn btn-danger">
-          <i class="bi bi-dash-circle"></i> Cancelar Bilhete
-        </button>
+        <div>
+          <button class="btn btn-danger">
+            <i class="bi bi-x-circle"></i> Cancelar bilhete
+          </button>
+        </div>
       </div>
     </div>
 
-    <InformacoesBilhete />
+    <div class="card my-3">
+      <div class="card-body">
+        <InformacoesBilhete />
 
-    <InformacoesPagamento />
+        <InformacoesPagamento />
 
-    <InformacoesSegurado />
+        <InformacoesSegurado />
+      </div>
+    </div>
 
     <div class="row">
       <div class="col-md-12 d-flex justify-content-between">
