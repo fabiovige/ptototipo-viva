@@ -14,75 +14,77 @@
       <div class="col-md-12">
         <!-- Carrinho de Compras -->
         <h4><i class="bi bi-calendar"></i> Informações do plano</h4>
-        <table class="table table-bordered table-striped">
-          <thead>
-            <tr>
-              <th>Data de emissão</th>
-              <th>Plano</th>
-              <th>Dt. Início</th>
-              <th>Dt. Fim</th>
-              <th>Total Apólices</th>
-              <th>Dias</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>21/08/2023 15:30</td>
-              <td>Brasil PLUS</td>
-              <td>Brasil</td>
-              <td>10/07/2023 00:00</td>
-              <td>11/08/2023 23:59</td>
-              <td>10</td>
-            </tr>
-          </tbody>
-        </table>
+        <div class="table-responsive">
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th>Data de emissão</th>
+                <th>Plano</th>
+                <th>Dt. Início</th>
+                <th>Dt. Fim</th>
+                <th>Total Apólices</th>
+                <th>Dias</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>21/08/2023 15:30</td>
+                <td>Brasil PLUS</td>
+                <td>Brasil</td>
+                <td>10/07/2023 00:00</td>
+                <td>11/08/2023 23:59</td>
+                <td>10</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
 
     <div class="row">
       <div class="col-md-12">
         <!-- Carrinho de Compras -->
-        <h4 class="mt-4">
-          <i class="bi bi-people"></i> Bilhetes
-        </h4>
-        <table class="table table-bordered table-striped">
-          <thead>
-            <tr>
-              <th>Cpf</th>
-              <th>Nome</th>
-              <th>Idade</th>
-              <th>Preço Unitário</th>
-              <th>Subtotal</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>123.456.678-02</td>
-              <td>Fabio dos Santos Martins</td>
-              <td>52</td>
-              <td>R$ 50,00</td>
-              <td>R$ 100,00</td>
-            </tr>
-            <tr>
-              <td>234.988.977-02</td>
-              <td>Valéria Martins</td>
-              <td>22</td>
-              <td>R$ 30,00</td>
-              <td>R$ 30,00</td>
-            </tr>
-            <tr>
-              <td>234.988.977-02</td>
-              <td>Isabela Nunes Martins</td>
-              <td>37</td>
-              <td>R$ 30,00</td>
-              <td>R$ 30,00</td>
-            </tr>
-            <tr>
-              <td colspan="4" class="text-end"><strong>Total:</strong></td>
-              <td>R$ 160,00</td>
-            </tr>
-          </tbody>
-        </table>
+        <h4 class="mt-4"><i class="bi bi-people"></i> Bilhetes</h4>
+        <div class="table-responsive">
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th>Cpf</th>
+                <th>Nome</th>
+                <th>Idade</th>
+                <th>Preço Unitário</th>
+                <th>Subtotal</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>123.456.678-02</td>
+                <td>Fabio dos Santos Martins</td>
+                <td>52</td>
+                <td>R$ 50,00</td>
+                <td>R$ 100,00</td>
+              </tr>
+              <tr>
+                <td>234.988.977-02</td>
+                <td>Valéria Martins</td>
+                <td>22</td>
+                <td>R$ 30,00</td>
+                <td>R$ 30,00</td>
+              </tr>
+              <tr>
+                <td>234.988.977-02</td>
+                <td>Isabela Nunes Martins</td>
+                <td>37</td>
+                <td>R$ 30,00</td>
+                <td>R$ 30,00</td>
+              </tr>
+              <tr>
+                <td colspan="4" class="text-end"><strong>Total:</strong></td>
+                <td>R$ 160,00</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
 

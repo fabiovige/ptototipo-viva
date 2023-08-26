@@ -14,7 +14,7 @@
       <InformacoesSeguradoSucesso />
     </div>
 
-    <div class="d-flex">
+    <div class="mt-3">
       <RouterLink to="/bilhetes/1" class="btn btn-info">
         <i class="bi bi-house"></i> Voltar ao Início
       </RouterLink>
