@@ -1,19 +1,9 @@
 <template>
   <div>
-    <div class="row">
-      <div
-        class="col-12 d-flex justify-content-md-end justify-content-start mb-3 mb-md-0"
-      >
-        <RouterLink to="/emitir" class="btn btn-info">
-          <i class="bi bi-arrow-left-circle"></i> Corrigir informações
-        </RouterLink>
-      </div>
-    </div>
-
+    <EmissorComponent />
+    <h4><i class="bi bi-calendar"></i> Informações do plano</h4>
     <div class="row">
       <div class="col-md-12">
-        <!-- Carrinho de Compras -->
-        <h4><i class="bi bi-calendar"></i> Informações do plano</h4>
         <div class="table-responsive">
           <table class="table table-bordered table-striped">
             <thead>
@@ -41,10 +31,9 @@
       </div>
     </div>
 
+    <h4 class="mt-4"><i class="bi bi-people"></i> Segurados</h4>
     <div class="row">
       <div class="col-md-12">
-        <!-- Carrinho de Compras -->
-        <h4 class="mt-4"><i class="bi bi-people"></i> Bilhetes</h4>
         <div class="table-responsive">
           <table class="table table-bordered table-striped">
             <thead>
@@ -89,7 +78,6 @@
     </div>
 
     <h4><i class="bi bi-credit-card"></i> Forma de pagamento</h4>
-
     <div class="row">
       <div class="col-md-6">
         <!-- faturamento-->
@@ -252,7 +240,12 @@
       </div>
     </div>
 
-    <div class="mt-3 d-flex justify-content-end">
+    <div class="mt-3 d-flex justify-content-between">
+      <div>
+        <RouterLink to="/emitir" class="btn btn-info">
+          <i class="bi bi-arrow-left-circle"></i> Revisar informações
+        </RouterLink>
+      </div>
       <div>
         <RouterLink to="/sucesso" class="btn btn-success">
           <i class="bi bi-check-circle"></i> Confirmar pagamento
@@ -265,6 +258,7 @@
 <script setup>
 import creditCardType from "credit-card-type";
 import { ref } from "vue";
+import EmissorComponent from "../components/EmissorComponent.vue";
 
 const cardNumber = ref("");
 const cardIcon = ref("");

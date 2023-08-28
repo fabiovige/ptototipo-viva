@@ -8,6 +8,7 @@
       <table class="table table-bordered table-striped ">
         <thead>
           <tr>
+            <th>Id Bilhete</th>
             <th>Cpf</th>
             <th>Nome</th>
             <th>E-mail</th>
@@ -17,11 +18,12 @@
         </thead>
         <tbody>
           <tr>
+            <td>98976</td>
             <td>123.456.678-02</td>
             <td>Fabio dos Santos Martins</td>
             <td>fabiovige@gmail.com</td>
             <td>(11) 99999-0909</td>
-            <td>
+            <td class="d-flex justify-content-end">
               <a :href="pdfFile" download class="btn btn-sm btn-primary">
                 <i class="bi bi-bookmark-star"></i> Voucher
               </a>

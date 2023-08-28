@@ -1,15 +1,6 @@
 <template>
   <div>
-    <div class="row">
-      <div
-        class="col-12 d-flex justify-content-md-end justify-content-start mb-3 mb-md-0"
-      >
-        <RouterLink to="/bilhetes/1" class="btn btn-info">
-          <i class="bi bi-x-circle"></i> Cancelar emissão
-        </RouterLink>
-      </div>
-    </div>
-
+    <EmissorComponent />
     <form>
       <!-- Vigência -->
       <h4><i class="bi bi-calendar"></i> Informações do plano</h4>
@@ -237,7 +228,12 @@
       :actions="actions"
     ></data-table>
 
-    <div class="d-flex justify-content-end mt-3">
+    <div class="d-flex justify-content-between mt-3">
+      <div>
+        <RouterLink to="/bilhetes/1" class="btn btn-info">
+          <i class="bi bi-x-circle"></i> Cancelar emissão
+        </RouterLink>
+      </div>
       <div>
         <RouterLink to="/resumo" class="btn btn-success">
           <i class="bi bi-check-circle"></i> Visualizar informações
@@ -249,6 +245,8 @@
 
 <script setup>
 import { ref } from "vue";
+import EmissorComponent from "../components/EmissorComponent.vue";
+
 const destino = ref("");
 const planos = ref([]);
 
@@ -318,7 +316,8 @@ const formulario = ref({
 
 import DataTable from "../components/UI/DataTable.vue";
 
-const title = "Bilhetes";
+const title = "Segurados";
+
 const columns = [
   { key: "cpf", label: "Cpf", style: { width: "100px" } },
   { key: "segurado", label: "Nome", style: { width: "150px" } },

@@ -1,5 +1,7 @@
 <template>
   <div>
+    <EmissorComponent />
+
     <div class="row">
       <div
         class="col-12 d-flex justify-content-md-end justify-content-start mb-3 mb-md-0"
@@ -32,7 +34,9 @@
 <script setup>
 import { computed, ref } from "vue";
 import { RouterLink, useRouter } from "vue-router";
+import EmissorComponent from "../components/EmissorComponent.vue";
 import DataTable from "../components/UI/DataTable.vue";
+
 const router = useRouter(); // Inicialize o roteador aqui
 const title = "Bilhetes emitidos";
 
