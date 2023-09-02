@@ -25,13 +25,8 @@
           </li>
           <li class="nav-item">
             <RouterLink class="nav-link" to="/emissores">
-              <i class="bi bi-bookmark-star"></i> Emitir Bilhete
+              <i class="bi bi-bookmark-star"></i> Emitir
             </RouterLink>
-          </li>
-          <li class="nav-item">
-            <RouterLink class="nav-link" to="/emissores">
-              <i class="bi bi-clipboard-check"></i> Financeiro</RouterLink
-            >
           </li>
         </ul>
 

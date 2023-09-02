@@ -12,15 +12,15 @@
 <script setup>
 import DataTable from "../components/UI/DataTable.vue";
 
-const title = "Emissores";
+const title = "Agências";
 const columns = [
   {
     key: "razao_social",
-    label: "Razão Social",
+    label: "Agência",
     style: { width: "150px" },
     class: "",
   },
-  { key: "nome", label: "Nome" },
+  { key: "nome", label: "Responsável" },
   { key: "email", label: "E-mail" },
   { key: "telefone", label: "Telefone" },
   { key: "actions", label: "Ações" },
@@ -69,9 +69,10 @@ const generateRandomData = () => {
     "Luiza da Silva",
   ];
   const razaoSociais = [
-    "Empresa XYZ Ltda",
-    "Empresa ABC Ltda",
-    "Empresa LMN Ltda",
+    "Agência XYZ Ltda",
+    "Agência ABC Ltda",
+    "Agência LMN Ltda",
+    "Agência NCB Informática Ltda",
   ];
 
   const tableData = [];

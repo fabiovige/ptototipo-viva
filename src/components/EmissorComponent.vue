@@ -3,7 +3,7 @@
     <div class="col-md-12">
       <div class="card">
         <div class="card-body">
-          <h4>NCB INFORMÁTICA</h4>
+          <h4>AGÊNCIA NCB INFORMÁTICA</h4>
           <div class="d-flex justify-content-between">
             <span class="text-muted small"
               ><strong>Emissor desde:</strong> 02/03/2023</span

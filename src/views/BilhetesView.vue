@@ -38,19 +38,14 @@ import EmissorComponent from "../components/EmissorComponent.vue";
 import DataTable from "../components/UI/DataTable.vue";
 
 const router = useRouter(); // Inicialize o roteador aqui
-const title = "Bilhetes emitidos";
+const title = "Bilhetes";
 
 const columns = [
-  { key: "id", label: "Id", style: { width: "100px" } },
+  { key: "id", label: "Id", style: { width: "50px" } },
+  { key: "emissor", label: "Usuário emissor", style: { width: "150px" } },
   { key: "cpf", label: "Cpf", style: { width: "100px" } },
   { key: "segurado", label: "Segurado", style: { width: "150px" } },
   { key: "plano", label: "Plano", style: { width: "100px" } },
-  {
-    key: "vigencia_inicio",
-    label: "Dt. Início",
-    style: { width: "100px" },
-  },
-  { key: "vigencia_fim", label: "Dt. Fim", style: { width: "100px" } },
   { key: "folheto", label: "Folheto", style: { width: "100px" } },
   { key: "status", label: "Status Pagto", style: { width: "100px" } },
   { key: "actions", label: "Ações", style: { width: "100px" } },
@@ -59,31 +54,28 @@ const columns = [
 const tableData = [
   {
     id: 22929,
+    emissor: "Paulo Silva",
     cpf: "123.456.789.77",
     segurado: "VIRGINIA MELLO SETRA",
     plano: "MUNDO 3",
-    vigencia_inicio: "15/08/2023",
-    vigencia_fim: "31/08/2023",
     folheto: "407,20",
     status: "Confirmado",
   },
   {
     id: 22928,
+    emissor: "Paulo Silva",
     cpf: "123.456.789.77",
     segurado: "CAMILA RIBEIRO DE MELLO SETRA",
     plano: "Brasil [PLUS]",
-    vigencia_inicio: "10/09/2023",
-    vigencia_fim: "20/10/2023",
     folheto: "307,20",
     status: "Pendente",
   },
   {
     id: 22927,
+    emissor: "Paulo Silva",
     cpf: "123.456.789.77",
     segurado: "ADRIEN FOLCO FILHO",
     plano: "MUNDO 3",
-    vigencia_inicio: "05/09/2023",
-    vigencia_fim: "28/09/2023",
     folheto: "123,20",
     status: "Confirmado",
   },
